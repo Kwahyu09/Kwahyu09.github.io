@@ -1,181 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+      integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css">
 
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-
-        .jumbotron {
-            background: linear-gradient(to right, #4a90e2, #a4c639);
-            color: white;
-            padding: 100px 25px;
-        }
-
-        .jumbotron img {
-            width: 150px;
-            height: 150px;
-        }
-
-        table {
-            margin: 20px auto;
-            border-collapse: collapse;
-        }
-
-        table td {
-            padding: 10px;
-        }
-
-        .card {
-            border: none;
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .contact-icons a {
-            margin: 0 10px;
-            color: #333;
-            font-size: 30px;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
-            padding: 20px 0;
-        }
-
-        footer a {
-            color: #a4c639;
-            text-decoration: none;
-        }
-    </style>
-
-    <title>My Portfolio || Krisna Wahyudi</title>
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#home">Krisna Wahyudi</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
+    <title>Portfolio || Krisna Wahyudi</title>
+  </head>
+  <body>
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body text-center">
+            <img id="modalImage" src="" alt="Zoomed Image" style="max-width: 100%; height: auto;">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Krisna Wahyudi</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto"> <!-- Align the links to the right -->
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a> <!-- New section -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
-    <!-- Home Section -->
-    <div class="jumbotron text-center" id="home">
-        <img src="img/krisna.png" class="rounded-circle img-thumbnail" alt="Krisna Wahyudi">
-        <h1 class="display-4">Krisna Wahyudi</h1>
-        <p class="lead">Mahasiswa | Programmer | Youtuber</p>
-
-        <table>
-            <tr><td><strong>Nama:</strong></td><td>Krisna Wahyudi</td></tr>
-            <tr><td><strong>Alamat:</strong></td><td>Jl. Nangka 1 Panorama, Bengkulu</td></tr>
-            <tr><td><strong>Email:</strong></td><td>krisna@example.com</td></tr>
-        </table>
+    <div class="jumbotron" id="home">
+      <img src="img/krisna-w.png" class="rounded-circle img-thumbnail" />
+      <h1 class="display-4">Krisna Wahyudi S.Kom.</h1>
+      <h3 class="lead">Bachelor of Computer Science | Web Developer</h3>
     </div>
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about" id="biodata">
         <div class="container">
-            <div class="row my-5 text-center">
-                <div class="col">
-                    <h2>About</h2>
-                    <p>Saya Krisna Wahyudi, seorang mahasiswa Informatika yang memiliki hobi olahraga dan antusias terhadap pengembangan perangkat lunak menggunakan PHP dan Laravel.</p>
-                </div>
-            </div>
+          <table class="table table-borderless text-white">
+            <tr>
+              <td style="padding-left: 130px;"><strong>Name</strong></td>
+              <td style="padding-left: 50px;">Krisna Wahyudi</td>
+            </tr>
+            <tr>
+              <td style="padding-left: 130px;"><strong>Current Address</strong></td>
+              <td style="padding-left: 50px;">Rejang Lebong, Bengkulu, Indonesia</td>
+            </tr>
+            <tr>
+              <td style="padding-left: 130px;"><strong>Academic</strong></td>
+              <td style="padding-left: 50px;">Universitas Bengkulu - Bachelor of Computer Science [2019 - 2024] </br>
+                Informatics Study Program, Faculty of Engineering (specializing in Web Development) </br>
+                <strong>Thesis:</strong> Implementation of the Forward Chaining Method in the Analysis of the Classification </br>
+                of the Level of Difficulty of Question Items as an Exam Evaluation Parameter</br>
+                (Case study : Fakultas Kedokteran dan Ilmu Kesehatan UNIB)
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 130px;"><strong>Related Experience</strong></td>
+              <td style="padding-left: 30px;">
+                <ul>
+                  <li>Developing a web-based exam evaluation information system [2024]</li>
+                  <li>Building a web-based exam information system [2023]</li>
+                  <li>Building a web-based laptop recommendation information system [2022]</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 130px;"><strong>Organization</strong></td>
+              <td style="padding-left: 30px;">
+                <ul>
+                  <li>Head of Interest and Talent Division UKM KEROHANIAN KBM UNIB [2021-2022]</li>
+                  <li>CO Field of SQT (Integrated Quranic Studies) UKM MOSTANEER FT KBM UNIB [2020-2021]</li>
+                  <li>Member of Minbak and Spiritual Affairs Himatif (Himpunan Mahasiswa Informatika) [2020-2021]</li>
+                  <li>Member of Student Ledership Education Angkatan Ke-VIII BEM KBM Universitas Bengkulu [2019-2020]</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 130px;"><strong>Highlighted Honor</strong></td>
+              <td style="padding-left: 30px;">
+                <ul>
+                  <li>Best Graduates of the 55th Informatics Study Program</li>
+                  <li>2nd Place in MTQM UNIB 2021 Men's Tartil Quran Competition Branch</li>
+                  <li>Best 1 Category of Best BMW Implementer at Exhibition and Competition and Student Enterpreneuship Activities at Bengkulu University</li>
+                  <li>1st Place in the Mini Internal Badminton Tournament PB.Maout Bengkulu October 2024 Edition</li>
+                </ul>
+              </td>
+            </tr>
+          </table>
         </div>
+      </section>      
+    <!-- Projects Section -->
+    <section class="projects bg-light" id="projects">
+      <div class="container">
+      </br>
+      </br>
+        <h2 class="text-center mb-5" style="color: black;">Projects</h2>
+        <div class="d-flex flex-wrap justify-content-center">
+          <div class="row">
+            <div class="col-md-4 mr-1">
+              <div class="card project-card">
+                <div class="card-body">
+                  <h5 class="card-title">Website Data Pegawai</h5>
+                  <div id="carouselExample1" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/dtp/1.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/dtp/2.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/dtp/3.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                    </div>
+                    <button class="carousel-button carousel-button-left" type="button" data-target="#carouselExample1" data-slide="prev">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-button carousel-button-right" type="button" data-target="#carouselExample1" data-slide="next">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <p class="card-text">Webiste ini digunakan untuk mengelola data pegawai </p>
+                  <strong>php native</strong>
+                </div>
+              </div>
+            </div>
+            <!-- projek selanjutnya -->
+            <div class="col-md-4 mr-1">
+              <div class="card project-card">
+                <div class="card-body">
+                  <h5 class="card-title">Website Evaluasi Ujian Butir Soal</h5>
+                  <div id="carouselExample2" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/eval/1.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/eval/2.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/eval/3.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/eval/4.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/eval/5.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                    </div>
+                    <button class="carousel-button carousel-button-left" type="button" data-target="#carouselExample2" data-slide="prev">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-button carousel-button-right" type="button" data-target="#carouselExample2" data-slide="next">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <p class="card-text">Webiste ini lanjutan dari website ujian yang digunakan untuk mengevaluasi butir soal ujian </p>
+                  <strong>Lavarvel || PHP || Bootstrap || Forward Chaining || Expert System
+                  </strong>
+                </div>
+              </div>
+            </div>
+            <!-- projek selanjutnya -->
+            <div class="col-md-4 mr-1">
+              <div class="card project-card">
+                <div class="card-body">
+                  <h5 class="card-title">Website Ujian Online</h5>
+                  <div id="carouselExample3" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/ujian/4.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/ujian/3.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/ujian/1.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                    </div>
+                    <button class="carousel-button carousel-button-left" type="button" data-target="#carouselExample3" data-slide="prev">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-button carousel-button-right" type="button" data-target="#carouselExample3" data-slide="next">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <p class="card-text">Website ujian online pilihan ganda dengan 5 opsi pilihan, bisa mengacak soal, login, menu waktu ujian</p>
+                  <strong>Lavarvel || PHP || Bootstrap</strong>
+                </div>
+              </div>
+            </div>
+            <!-- projek selanjutnya -->
+            <div class="col-md-4 mr-1">
+              <div class="card project-card">
+                <div class="card-body">
+                  <h5 class="card-title">Website Rekomendasi Laptop (Reklap)</h5>
+                  <div id="carouselExample4" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/reklap/1.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/reklap/2.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/reklap/3.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/reklap/4.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/reklap/5.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                    </div>
+                    <button class="carousel-button carousel-button-left" type="button" data-target="#carouselExample4" data-slide="prev">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-button carousel-button-right" type="button" data-target="#carouselExample4" data-slide="next">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <p class="card-text">Webiste ini digunakan untuk mengelola data pegawai </p>
+                  <strong>php native</strong>
+                </div>
+              </div>
+            </div>
+            <!-- Add more projects here if needed -->
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio bg-light" id="portfolio">
-        <div class="container">
-            <div class="row pt-4 mb-4 text-center">
-                <div class="col">
-                    <h2>Portfolio</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="img/website1.png" alt="Website 1">
-                        <div class="card-body">
-                            <h5 class="card-title">Website E-commerce</h5>
-                            <p class="card-text">Platform jual beli online dengan fitur lengkap.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="img/website2.png" alt="Website 2">
-                        <div class="card-body">
-                            <h5 class="card-title">Website Portofolio</h5>
-                            <p class="card-text">Situs pribadi untuk menampilkan karya dan keahlian.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img class="card-img-top" src="img/website3.png" alt="Website 3">
-                        <div class="card-body">
-                            <h5 class="card-title">Website LMS</h5>
-                            <p class="card-text">Sistem pembelajaran daring untuk perguruan tinggi.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="container">
-            <div class="row pt-4 mb-4 text-center">
-                <div class="col">
-                    <h2>Contact</h2>
-                </div>
+      <div class="container">
+        <h2 class="text-center mt-3 mb-4">Contact</h2>
+        <div class="row mt-4 text-center">
+          <div class="col">
+            <div class="social-icons">
+              <div class="contact-logo">
+                  <a href="https://www.linkedin.com/in/krisnawahyudi/" target="_blank"><i class="fab fa-linkedin"></i><p>Linkedin</p></a>
+              </div>
+              ||
+              <div class="contact-logo">
+                  <a href="https://www.instagram.com/krisna_wahyudi_/" target="_blank"><i class="fab fa-instagram"></i><p>Instagram</p></a>
+              </div>
+              ||
+              <div class="contact-logo">
+                  <a href="https://www.youtube.com/@krisnawahyudi3563" target="_blank"><i class="fab fa-youtube"></i><p>Youtube</p></a>
+              </div>
+              ||
+              <div class="contact-logo">
+                <a href="https://github.com/kwahyu09" target="_blank"><i class="fab fa-github"></i><p>Github</p></a>
+              </div>
             </div>
-            <div class="row text-center">
-                <div class="col">
-                    <div class="contact-icons">
-                        <a href="https://www.linkedin.com/in/krisnawahyudi"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/krisna_wahyudi_"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@krisnawahyudi3563"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Footer -->
     <footer class="text-center">
-        <p>&copy; 2024 Krisna Wahyudi. All Rights Reserved.</p>
+      <p>Copyright &copy; 2024 | Built by Krisna Wahyudi</p>
     </footer>
-
-    <!-- FontAwesome Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
-</body>
+    
+    <script>
+      function openModal(image) {
+        // Mengambil URL gambar dari elemen yang diklik
+        const imageUrl = image.src;
+    
+        // Menetapkan URL ke gambar dalam modal
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = imageUrl;
+    
+        // Membuka modal
+        $('#imageModal').modal('show');
+      }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </body>
 </html>
