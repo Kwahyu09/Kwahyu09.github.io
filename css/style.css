@@ -192,3 +192,49 @@ footer {
   display: block;
   margin: 0 auto; /* Pusatkan gambar */
 }
+
+.contact-logo a {
+  font-size: 1rem; /* Ukuran teks default */
+  color: #0077b5; /* Warna LinkedIn biru */
+  transition: color 0.3s ease; /* Efek saat hover */
+}
+
+.contact-logo a:hover {
+  color: #005582; /* Warna lebih gelap saat hover */
+}
+
+.contact-logo i {
+  font-size: 2rem; /* Ukuran default ikon */
+}
+
+/* Penyesuaian pada perangkat kecil */
+@media (max-width: 768px) {
+  .contact-logo i {
+      font-size: 1.5rem; /* Ikon lebih kecil di perangkat kecil */
+  }
+
+  .contact-logo a {
+      font-size: 0.9rem; /* Ukuran teks lebih kecil */
+  }
+}
+
+/* Padding default untuk layar besar (laptop/desktop) */
+.about table .label-td {
+  padding-left: 130px;
+}
+
+.about table .value-td {
+  padding-left: 50px;
+}
+
+.about table .value-tdx {
+  padding-left: 30px;
+}
+
+/* Hilangkan padding untuk layar kecil (HP) */
+@media (max-width: 768px) {
+  .about table .label-td,
+  .about table .value-td {
+      padding-left: 0;
+  }
+}
