@@ -70,3 +70,17 @@ function openModal(img) {
   document.getElementById("modalImage").src = img.src
   $("#imageModal").modal("show")
 }
+
+const track = document.getElementById("logoTrack")
+let scrollAmount = 0
+
+function slideLogos() {
+  scrollAmount += 1
+  if (scrollAmount >= track.scrollWidth / 2) {
+    scrollAmount = 0
+  }
+  track.style.transform = `translateX(-${scrollAmount}px)`
+  requestAnimationFrame(slideLogos)
+}
+
+slideLogos()
