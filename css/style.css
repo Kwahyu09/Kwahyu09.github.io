@@ -14,10 +14,53 @@ nav {
 }
 
 .jumbotron {
-  background: linear-gradient(to right, #4ca1af, #2c3e50);
-  color: white;
+  position: relative;
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
+  color: white;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.corner-wave {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ripple-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Ripple effect on hover */
+.jumbotron:hover .ripple-background::after {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  animation: ripple-effect 0.6s ease-out forwards;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: translate(-50%, -50%) scale(15);
+    opacity: 0;
+  }
 }
 
 .jumbotron img {
@@ -118,7 +161,7 @@ footer {
 .projects .row, .portfolio .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content:start;
 }
 
 .projects .col-md-4, .portfolio .col-md-3 {
@@ -164,8 +207,9 @@ footer {
 }
 
 .project-card {
-  min-height: 400px; /* Tinggi minimum yang sama untuk semua card */
-  margin-right: 1rem; /* Margin antar card */
+  min-height: 500px; /* Tinggi minimum yang sama untuk semua card */
+  margin-right: -0.5rem; /* Margin antar card */
+  margin-left: -0.5rem; /* Margin antar card */
 }
 
 .project-card img {
@@ -236,5 +280,51 @@ footer {
   .about table .label-td,
   .about table .value-td {
       padding-left: 0;
+  }
+}
+
+.certification {
+  background: linear-gradient(135deg, #f6f8fa 0%, #e8f0fe 100%);
+}
+
+.project-card img {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.project-card img:hover {
+  transform: scale(1.05);
+}
+
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  height: 100px;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(250px * 16); /* 16 = jumlah logo (termasuk duplikat) */
+  animation: scrollLeft 20s linear infinite;
+}
+
+.logo-track img {
+  width: 80px;
+  height: auto;
+  margin: 0 20px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-track img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }

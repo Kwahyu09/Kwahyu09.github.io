@@ -63,9 +63,20 @@
     </nav>
 
     <div class="jumbotron" id="home">
+      <!-- RIPPLE EFFECT LAYER -->
+      <div class="ripple-background"></div>
+
+      <!-- MAIN CONTENT -->
       <img src="img/krisna-w.png" class="rounded-circle img-thumbnail" />
       <h1 class="display-4">Krisna Wahyudi</h1>
-      <h3 class="lead">Programmer | Full stack web developer</h3>
+      <h3 class="lead">Programmer | Full Stack Web Developer</h3>
+
+      <!-- DECORATIVE CORNER CURVE -->
+      <svg class="corner-wave" viewBox="0 0 500 150" preserveAspectRatio="none">
+        <path d="M0,150 C150,100 350,0 500,50 L500,150 L0,150 Z"
+          style="fill: rgba(255,255,255,0.05);">
+        </path>
+      </svg>
     </div>
 
     <section class="about" id="biodata">
@@ -104,6 +115,7 @@
                     <li>Developing a web-based exam evaluation information system [2024]</li>
                     <li>Building a web-based exam information system [2023]</li>
                     <li>Building a web-based laptop recommendation information system [2022]</li>
+                    <li>Building a Rest API for the Red and White Loker Website of Bengkulu Province [2025]</li>
                   </ul>
                 </td>
               </tr>
@@ -132,7 +144,34 @@
             </table>
           </div>
         </div>
-      </section>      
+      </section>
+    <section id="tech-stack" class="bg-dark py-5">
+      <div class="container">
+        <h2 class="text-center text-white mb-4">Tech Stack</h2>
+        <div class="logo-slider">
+          <div class="logo-track">
+            <!-- Ganti src dengan path logo kamu -->
+            <img src="img/logo/html.png" alt="HTML" />
+            <img src="img/logo/css.png" alt="CSS" />
+            <img src="img/logo/php.png" alt="PHP" />
+            <img src="img/logo/laravel.png" alt="Laravel" />
+            <img src="img/logo/bootstrap.png" alt="Bootstrap" />
+            <img src="img/logo/tailwind.png" alt="Tailwind" />
+            <img src="img/logo/react.png" alt="React" />
+            <img src="img/logo/next-js.png" alt="Next.js" />
+            <!-- duplikat untuk efek loop -->
+            <img src="img/logo/html.png" alt="HTML" />
+            <img src="img/logo/css.png" alt="CSS" />
+            <img src="img/logo/php.png" alt="PHP" />
+            <img src="img/logo/laravel.png" alt="Laravel" />
+            <img src="img/logo/bootstrap.png" alt="Bootstrap" />
+            <img src="img/logo/tailwind.png" alt="Tailwind" />
+            <img src="img/logo/react.png" alt="React" />
+            <img src="img/logo/next-js.png" alt="Next.js" />
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Projects Section -->
     <section class="projects bg-light" id="projects">
       <div class="container">
@@ -239,7 +278,7 @@
               <div class="card project-card">
                 <div class="card-body">
                   <h5 class="card-title">Website Rekomendasi Laptop (Reklap)</h5>
-                  <div id="carouselExample4" class="carousel slide">
+                  <div id="carouselExample5" class="carousel slide">
                     <div class="carousel-inner">
                       <div class="carousel-item active">
                         <img src="img/reklap/1.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
@@ -257,6 +296,38 @@
                         <img src="img/reklap/5.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
                       </div>
                     </div>
+                    <button class="carousel-button carousel-button-left" type="button" data-target="#carouselExample5" data-slide="prev">
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-button carousel-button-right" type="button" data-target="#carouselExample5" data-slide="next">
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
+                  <p class="card-text">Webiste ini digunakan untuk mengelola data pegawai </p>
+                  <strong>PHP native|| Bootstrap</strong>
+                </div>
+              </div>
+            </div>
+            <!-- projek selanjutnya -->
+            <div class="col-md-4 mr-1">
+              <div class="card project-card">
+                <div class="card-body">
+                  <h5 class="card-title">Website Loker Merah Putih Provinsi Bengkulu</h5>
+                  <div id="carouselExample4" class="carousel slide">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="img/loker/1.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/loker/2.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/loker/3.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                      <div class="carousel-item">
+                        <img src="img/loker/4.png" alt="Project 1" class="d-block w-200" onclick="openModal(this)">
+                      </div>
+                    </div>
                     <button class="carousel-button carousel-button-left" type="button" data-target="#carouselExample4" data-slide="prev">
                       <i class="fas fa-chevron-left"></i>
                     </button>
@@ -264,13 +335,32 @@
                       <i class="fas fa-chevron-right"></i>
                     </button>
                   </div>
-                  <p class="card-text">Webiste ini digunakan untuk mengelola data pegawai </p>
-                  <strong>php native</strong>
+                  <p class="card-text">Website Loker Merah Putih adalah platform resmi Pemprov Bengkulu untuk memudahkan masyarakat mencari pekerjaan, dikelola langsung oleh Gubernur dan Dinas Tenaga Kerja Provinsi Bengkulu.</p>
+                  <strong>Rest API || Lavarvel || PHP || Tailwind || React Js || Next.Js</strong>
                 </div>
               </div>
             </div>
             <!-- Add more projects here if needed -->
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- Sertification Section -->
+    <section class="certification py-5" style="background: linear-gradient(135deg, #f6f8fa 0%, #e8f0fe 100%);" id="certification">
+      <div class="container">
+        <h2 class="text-center mb-5" style="color: black;">Certification</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card project-card">
+              <div class="card-body">
+                <h5 class="card-title">Sertifikasi Junior Web Developer</h5>
+                <img src="img/sertif/sertif.jpg" alt="Sertifikasi 1" class="img-fluid" onclick="openModal(this)">
+                <p class="card-text mt-2">Certificate Of Competence From Professional Certification Body Technology</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <!-- Tambahkan card tambahan jika perlu -->
         </div>
       </div>
     </section>
